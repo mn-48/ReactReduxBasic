@@ -4,7 +4,7 @@ const redux = require('redux')
 // eta duita perameter input ney
 // object return kore
 
-const counterReducer = (state, action) => {
+const counterReducer = (state = {counter: 0}, action) => {
 
     return {
         counter: state.counter + 1
