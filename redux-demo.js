@@ -24,5 +24,5 @@ const counterSubscriber = () => {
 
 store.subscribe(counterSubscriber)
 
-// Dispatch/ Trigger --> type sob somoy unique hobe
+// Dispatch/ Trigger eta ekta js object perameter input nibe --> type sob somoy unique hobe
 store.dispatch({type: 'increment'});
