@@ -13,7 +13,7 @@ const counterReducer = (state = {counter: 0}, action) => {
 
 //  central store
 const store = redux.createStore(counterReducer);
-
+console.log(store.getState());
 
 // subscriber
 // etar kono input parameter thakbe na
