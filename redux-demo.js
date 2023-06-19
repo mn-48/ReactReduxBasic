@@ -19,6 +19,10 @@ const store = redux.createStore(counterReducer);
 // etar kono input parameter thakbe na
 const counterSubscriber = () => {
     const latestState = store.getState();
+    console.log(latestState)
 }
 
 store.subscribe(counterSubscriber)
+
+// Dispatch/ Trigger --> type sob somoy unique hobe
+store.dispatch({type: 'increment'});
