@@ -5,15 +5,23 @@ const redux = require('redux')
 // object return kore
 
 const counterReducer = (state = {counter: 0}, action) => {
-
-    return {
-        counter: state.counter + 1
+    if (action.type === "increment"){
+        return {
+            counter: state.counter + 1, // ekhane comma dite hobe
+        };
     }
+    if (action.type === "decrement"){
+        return {
+            counter: state.counter - 1, // ekhane comma dite hobe
+        };
+    }
+
+    
 }
 
 //  central store
 const store = redux.createStore(counterReducer);
-console.log(store.getState());
+// console.log(store.getState());
 
 // subscriber
 // etar kono input parameter thakbe na
@@ -22,7 +30,8 @@ const counterSubscriber = () => {
     console.log(latestState)
 }
 
-store.subscribe(counterSubscriber)
+store.subscribe(counterSubscriber);
 
 // Dispatch/ Trigger eta ekta js object perameter input nibe --> type sob somoy unique hobe
 store.dispatch({type: 'increment'});
+store.dispatch({type: 'decrement'});
